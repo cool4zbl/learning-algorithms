@@ -14,12 +14,10 @@ class Solution:
         if head is None or head.next is None:
             return True
 
-        fast = head
-        slow = head
+        fast, slow = head
 
-        while fast.next != None and fast.next.next != None:
-            fast = fast.next.next
-            slow = slow.next
+        while fast.next and fast.next.next:
+            slow, fast = slow.next, fast.next.next
 
         """
             start reversing from the `slow.next` pointer
@@ -40,12 +38,12 @@ class Solution:
         return True
 
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        prev = None
-        next = None
+        cur, prev = None
+        while cur:
+            cur.next, prev, cur = prev, cur, head.next
 
-        while head:
-            next = head.next
-            head.next = prev
-            prev = head
-            head = next
+            # next = head.next
+            # head.next = prev
+            # prev = head
+            # head = next
         return prev

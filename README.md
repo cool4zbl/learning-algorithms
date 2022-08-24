@@ -20,5 +20,20 @@ Counting Sort
 
 ### Data Structures
 
+Linked List
+
 Binary Search Tree
-dynamic array, linked list, stack, queue, circular queue, hash map, set, priority queue, binary search tree, etc.
+dynamic array, stack, queue, circular queue, hash map, set, priority queue, binary search tree, etc.
+
+### Others
+
+1. Logarithm (Complexity Analysis)
+2. Graph Traversals (BFS & DFS)
+3. Binary Search
+4. Sliding Window
+5. Recursion
+6. 2 Algorithms (Inverting a binary tree & Reverse a Linked List)
+7. Suffix Trees
+8. Heaps
+9. DP
+10. Sorting Algorithms (Quick & Merge)

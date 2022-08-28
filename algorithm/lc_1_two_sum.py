@@ -8,8 +8,5 @@ def twoSum(nums, target):
         d[n] = i
     return []
 
-def threeSum(nums):
-    nums
-
 s = twoSum([2,7,11,3], 9)
 print(s)

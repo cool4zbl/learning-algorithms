@@ -15,24 +15,21 @@ class Solution:
             then we re-construct the original array through diff array,
             the interval arr[i...j] values are changed by `x`
 
+            since the original array is N zeros, we just need one array here.
         """
-        diff = []
-        for i in range(n):
-            diff.append(0)
 
-        for li in bookings:
-            [first, last, seats] = li
+        diff =[0] * n
+
+        for first, last, seats  in bookings:
             diff[first - 1] += seats
             # Note the `last` value here
             if last < len(diff):
                 diff[last] -= seats
 
-        answer = [diff[0]]
         for i in range(1, n):
-            answer.append(diff[i] + answer[i - 1])
+            diff[i] += diff[i - 1]
 
-        return answer
-
+        return diff
 
 s = Solution()
 arr =[[1,2,10],[2,3,20],[2,5,25]]

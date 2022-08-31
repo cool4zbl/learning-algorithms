@@ -23,5 +23,4 @@ class Solution:
             Find the num’s upper_bound, which index is "first value is target + 1",
             i.e. find the lower_bound of "target + 1", so we can reuse the same method by binary search.
         """
-        return [lo, self.search(nums, target + 1) - 1] if target == nums[lo] else [-1, -1]
-            # if target in nums[lo:lo+1] else [-1, -1]
+        return [lo, self.search(nums, target + 1) - 1] if target in nums[lo:lo+1] else [-1, -1]

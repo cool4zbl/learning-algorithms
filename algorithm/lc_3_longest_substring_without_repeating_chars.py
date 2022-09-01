@@ -1,6 +1,8 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         """
+			let's take "tmmzuxt" as an example -
+
             l
             |
             t   m   m   z   u   x   t
@@ -14,24 +16,28 @@ class Solution:
                 |
                 r
             seen = {t: 0, m: 1}, l = 0, r = 1, max_len = 2
+
             l
             |
             t   m   m   z   u   x   t
                     |
                     r
             seen = {t: 0, m: 1}, r = 1
+
                     l
                     |
             t   m   m   z   u   x   t
                     |
                     r
             seen = {t: 0, m: 2}
+
                     l
                     |
             t   m   m   z   u   x   t
                                 |
                                 r
             seen = {t: 0, m: 2, z: 3, u: 4, x: 5 }, l = 2, r = 5, max_len = 4
+
                     l
                     |
             t   m   m   z   u   x   t

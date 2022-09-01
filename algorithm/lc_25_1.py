@@ -1,5 +1,3 @@
-from __future__ import print_function
-
 class Node:
 	def __init__(self, value, next=None):
 		self.value = value

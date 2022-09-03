@@ -1,7 +1,11 @@
 class Solution:
-
+    """
+        search range: [left, right)
+        left index is included, right index is not included.
+        so the condition of the loop is `while lo < hi`
+    """
     def search(self, nums, target):
-        lo, hi = 0, len(nums) - 1
+        lo, hi = 0, len(nums)
 
         while lo < hi:
             mid = (lo + hi) >> 1

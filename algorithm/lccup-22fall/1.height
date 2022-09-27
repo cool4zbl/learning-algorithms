@@ -1,0 +1,18 @@
+from typing import List
+
+
+class Solution:
+    def sortPeople(self, names: List[str], heights: List[int]) -> List[str]:
+        dic = {}
+        for i, h in enumerate(heights):
+            dic[h] = names[i]
+        heights.sort(reverse=True)
+        res = []
+        for h in heights:
+            res.append(dic[h])
+        return res
+
+
+n = ["Mary", "John", "Emma"]
+h = [180, 165, 170]
+print(Solution().sortPeople(names=n, heights=h))

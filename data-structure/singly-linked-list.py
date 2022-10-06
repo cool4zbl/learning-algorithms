@@ -3,6 +3,7 @@ class Node:
         self.data = data
         self.next = None
 
+
 class LinkedList:
     def __init__(self) -> None:
         self.head = None
@@ -36,6 +37,7 @@ class LinkedList:
         n = Node(data)
         n.next = prev_node.next
         prev_node.next = n
+
 
 sllist = LinkedList()
 sllist.append("A")

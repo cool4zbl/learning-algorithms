@@ -1,3 +1,4 @@
+import collections
 from typing import List
 
 
@@ -20,14 +21,16 @@ class Solution:
     def levelOrderBFS(self, root):
         if not root:
             return []
-        queue = collections.deque([root])
         result = []
+
+        queue = collections.deque([root])
         level = 0
+
         while queue:
             curr_level_len = len(queue)
             result.append([])
             for _ in range(curr_level_len):
-                node = queue.popleft()
+                node = queue.pop(0)
                 result[level].append(node.val)
                 if node.left:
                     queue.append(node.left)

@@ -4,17 +4,21 @@ from typing import List
 class Solution:
     def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
         ans = []
-        return self.sub(nums, [], ans)
+        n = len(nums)
+        nums.sort()
 
-    def sub(self, nums: List[int], res: List[int], ans: List[int]) -> List[List[int]]:
-        if not nums:
-            if res not in ans:
-                ans.append(res)
-            return ans
+        def backtracking(nums, res, k):
+            ans.append(res[:])
 
-        self.sub(nums[1:], res + [], ans)
-        self.sub(nums[1:], res + [nums[0]], ans)
+            for i in range(k, len(nums)):
+                if i > k and nums[i] == nums[i-1]:
+                    continue
 
+                res.append(nums[i])
+                backtracking(nums, res, i + 1)
+                res.pop()
+
+        backtracking(nums, [], 0)
         return ans
 
 

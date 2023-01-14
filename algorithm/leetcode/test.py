@@ -1,5 +1,19 @@
+from typing import List
 import collections
-import numbers
+
+
+def dfs(grid: List[List[str]], i, j, visited):
+    m, n = len(grid), len(grid[0])
+    if i < 0 or j < 0 or i >= m or j >= n:
+        return
+    if visited[i][j]:
+        return
+
+    visited[i][j] = True
+    dfs(grid, i-1, j, visited)
+    dfs(grid, i+1, j, visited)
+    dfs(grid, i, j-1, visited)
+    dfs(grid, i, j+1, visited)
 
 
 def sol(a):
